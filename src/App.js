@@ -4,9 +4,25 @@ import { Input,Button } from 'antd';
 import Bar from './component/square'
 class App extends React.Component{
   state={
-    array:[7,5,12],
+    array:[],
     inputValue:''
   }
+
+
+  handleInputChange=(e)=>{
+    this.setState({
+      inputValue:e.target.value
+    })
+  }
+  pushDataBtn=()=>{
+    let newarray = this.state.array.slice() ;
+    newarray.push(Math.floor(this.state.inputValue));
+    this.setState({
+      inputValue:'',
+      array:newarray
+    })
+  }
+
   render(){
     let circleDiv = this.state.array.map((value,index)=><Bar
       key={index}  
@@ -20,12 +36,12 @@ class App extends React.Component{
         <section>
           <Input
             className="inputData"
-            value={this.state.inputValue}
-            // onChange={this.handleInputChange} 
+            value = {this.state.inputValue}
+            onChange={this.handleInputChange} 
           />
           <button   
               className="pushBtn"
-              // onClick={this.changeToBubbleSort}
+              onClick={()=>this.pushDataBtn()}
           >Push</button>
           <button 
               className="clearBtn"
