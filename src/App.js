@@ -22,6 +22,13 @@ class App extends React.Component{
       array:newarray
     })
   }
+  clearDataBtn=()=>{
+    let newarray = []
+    this.setState({
+      inputValue:'',
+      array:newarray
+    })
+  }
 
   render(){
     let circleDiv = this.state.array.map((value,index)=><Bar
@@ -45,7 +52,7 @@ class App extends React.Component{
           >Push</button>
           <button 
               className="clearBtn"
-              // onClick={this.changeToMergeSor}
+              onClick={()=>this.clearDataBtn()}
           >Clear</button>
           <button 
               className="sortingBtn"
