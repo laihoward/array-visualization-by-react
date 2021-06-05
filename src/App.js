@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Input,Button } from 'antd';
 import Bar from './component/square'
+import BubbleSort from './algorithms/bubbleSort'
 class App extends React.Component{
   state={
     array:[],
@@ -27,6 +28,13 @@ class App extends React.Component{
     this.setState({
       inputValue:'',
       array:newarray
+    })
+  }
+  sortDataBtn=()=>{
+    let array = this.state.array.slice();
+    BubbleSort(array);
+    this.setState({
+      array:array
     })
   }
 
@@ -56,7 +64,7 @@ class App extends React.Component{
           >Clear</button>
           <button 
               className="sortingBtn"
-              // onClick={this.changeToQuickSort}
+              onClick={()=>this.sortDataBtn()}
           >Sorting</button>
         </section>
         <section className="circle card container">
