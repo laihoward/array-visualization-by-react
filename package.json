@@ -2,7 +2,7 @@
   "name": "array",
   "version": "0.1.0",
   "private": true,
-  
+  "proxy": "http://127.0.0.1:3000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
