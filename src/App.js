@@ -1,14 +1,15 @@
   
 import React from 'react';
 import './App.css';
-import { Input} from 'antd';
+import {Input} from 'antd';
 import Bar from './component/square'
 import BubbleSort from './algorithms/bubbleSort'
 
 class App extends React.Component{
   state={
     array:[],
-    inputValue:''
+    inputValue:'',
+    deletewarning:""
   }
 
   handleInputChange=(e)=>{
@@ -21,32 +22,54 @@ class App extends React.Component{
     newarray.push(Math.floor(this.state.inputValue));
     this.setState({
       inputValue:'',
-      array:newarray
+      array:newarray,
+      deletewarning:''
     })
   }
+  deleteDataBtn=()=>{
+    if (this.state.inputValue==""){
+      let x= "Enter the index of number and press delete botton again."
+      this.setState({
+        deletewarning:x
+    })
+    }
+    else{
+      let newarray = this.state.array.slice() ;
+      let deleteindex = this.state.inputValue
+      newarray.splice(deleteindex,1)
+      this.setState({
+        inputValue:'',
+        array:newarray,
+        deletewarning:''
+    })
+    }
+  }
+
   clearDataBtn=()=>{
     let newarray = []
     this.setState({
       inputValue:'',
-      array:newarray
+      array:newarray,
+      deletewarning:''
     })
   }
   sortDataBtn=()=>{
     let array = this.state.array.slice();
     BubbleSort(array);
     this.setState({
-      array:array
+      array:array,
+      deletewarning:''
     })
   }
   render(){
       let circleDiv = this.state.array.map((value,index)=><Bar
       key={index}  
       data={value}
+      num={index}
       />)
       return (
         <div className ="App">
-          <h1>array visualization</h1>
-          <h2>push number between 0 to 99</h2>
+          <h1>Array Implementaion</h1>
           <section>
             
               <Input
@@ -55,19 +78,26 @@ class App extends React.Component{
               onChange={this.handleInputChange} 
               />
               <button   
-                  className="pushBtn"
+                  className="pushBtn Btn"
                   onClick={()=>this.pushDataBtn()}
               >Push</button>
+              <button   
+                  className="deleteBtn Btn normal"
+                  onClick={()=>this.deleteDataBtn()}
+              >Delete</button>
               <button 
-                  className="clearBtn"
+                  className="clearBtn Btn normal"
                   onClick={()=>this.clearDataBtn()}
               >Clear</button>
               <button 
-                  className="sortingBtn"
+                  className="sortingBtn Btn normal"
                   onClick={()=>this.sortDataBtn()}
               >Sorting</button>
             
             
+          </section>
+          <section>
+            <p className="warning">{this.state.deletewarning}</p>
           </section>
           <section className="circle card container">
             {circleDiv}

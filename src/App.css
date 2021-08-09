@@ -1,72 +1,60 @@
 body {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f2f2f2;
-  }
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f2f2f2;
+}
 
-  .container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 50px;
-    padding: 30px;
-  }
-  /* 白底背景 */
-  .circle {
-    display: flex;
-    background: white;
-    margin: 100px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px 0px #ddd;
-  }
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 50px;
+  padding: 30px;
+}
+/* 白底背景 */
+.circle {
+  display: flex;
+  background: white;
+  margin: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px 0px #ddd;
+}
 
-  .pushBtn{
-    width: 60px;
-    margin-right:20px ;
-    margin-left:15px ;
-    height: 30px;
-    border-radius: 5px;
-    color: white;
-    background: #4C8FFB;
-    border: 2px #3079ED solid;
-    box-shadow: inset 0 1px 0 #80B0FB;
-  }
-  .pushBtn:hover{
-    background-color: brown
-  }
-  
-  .clearBtn{
-    width: 60px;
-    margin-right:20px ;
-    height: 30px;
-    border-radius: 5px;
-    color: white;
-    background: #4C8FFB;
-    border: 2px #3079ED solid;
-    box-shadow: inset 0 1px 0 #80B0FB;
-  }
-  .clearBtn:hover{
-    background-color: brown
-  }
-  
-  .sortingBtn{
-    width: 60px;
-    margin-right:20px ;
-    height: 30px;
-    border-radius: 5px;
-    color: white;
-    background: #4C8FFB;
-    border: 2px #3079ED solid;
-    box-shadow: inset 0 1px 0 #80B0FB;
-  }
-  .sortingBtn:hover{
-    background-color: brown
-  }
+.pushBtn{
+  width: 60px;
+  margin-right:20px ;
+  margin-left:15px ;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  background: #4C8FFB;
+  border: 2px #3079ED solid;
+  box-shadow: inset 0 1px 0 #80B0FB;
+}
 
+.normal{
+  width: 60px;
+  margin-right:20px ;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  background: #4C8FFB;
+  border: 2px #3079ED solid;
+  box-shadow: inset 0 1px 0 #80B0FB;
+}
 
-  .inputData{
-    width:60px;
-    margin-right:15px ;
-  }
+.Btn:hover{
+  background-color: brown
+}
+
+.inputData{
+  width:60px;
+  margin-right:15px ;
+}
+.warning{
+  margin-top: 40px;
+  color: red;
+  font-size: 20px;
+}

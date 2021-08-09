@@ -1,9 +1,15 @@
 import React from 'react';
 import "./square.css"
 
-function Bar({data}) {
+function Bar({data,num}) {
     return (
-      <div className="bar" >{data}</div>
+      <div>
+        <div className="bar" >{data}</div>
+        <div>{num}</div>
+      </div>
+      
+
+      
     )
   }
   export default Bar;
